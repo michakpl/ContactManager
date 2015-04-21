@@ -11,18 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :number %><br>
-    <%= f.text_field :number %>
+    <%= f.text_field :number, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :contact_id %><br>
-    <%= f.number_field :contact_id %>
+    <%= f.hidden_field :contact_id %>
   </div>
   <div class="field">
     <%= f.hidden_field :contact_type %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Phone number', class: 'btn btn-primary' %>
   </div>
 <% end %>

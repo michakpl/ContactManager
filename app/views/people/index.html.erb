@@ -1,31 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<h1>Listing People</h1>
+  <h1>Listing People</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @people.each do |person| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td class="name"><%= person %></td>
-        <td>
-          <ul>
-            <li><%= link_to 'Show', person %></li>
-            <li><%= link_to 'Edit', edit_person_path(person) %></li>
-            <li><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-          </ul>
-        </td>
+        <th>Name</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @people.each do |person| %>
+        <tr>
+          <td class="name"><%= person %></td>
+          <td>
+            <ul>
+              <li><%= link_to 'Show', person, class: 'btn btn-success btn-sm' %></li>
+              <li><%= link_to 'Edit', edit_person_path(person), class: 'btn btn-info btn-sm' %></li>
+              <li><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning btn-sm' %></li>
+            </ul>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Person', new_person_path, id: 'new_person' %>
+  <br>
+
+  <%= link_to 'New Person', new_person_path, id: 'new_person', class: 'btn btn-primary' %>
+</div>

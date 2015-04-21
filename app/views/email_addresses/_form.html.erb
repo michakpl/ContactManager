@@ -12,17 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :contact_id %><br>
-    <%= f.number_field :contact_id %>
+    <%= f.hidden_field :contact_id %>
   </div>
   <div class="field">
     <%= f.hidden_field :contact_type %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Email address', class: 'btn btn-primary' %>
   </div>
 <% end %>
