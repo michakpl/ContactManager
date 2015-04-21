@@ -40,9 +40,8 @@ RSpec.describe PeopleController, type: :controller do
 
   describe "GET #index" do
     it "assigns all people as @people" do
-      user = User.create
       person = Person.create! valid_attributes.merge(user_id: user.id)
-      get :index, {}, {:user_id => user.id}
+      get :index, {}, valid_session
       expect(assigns(:people)).to eq([person])
     end
   end

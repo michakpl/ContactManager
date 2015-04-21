@@ -4,12 +4,13 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = current_user.companies
   end
 
   # GET /companies/1
   # GET /companies/1.json
   def show
+    @company = current_user.companies.find(params[:id])
   end
 
   # GET /companies/new
@@ -24,7 +25,7 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.new(company_params)
+    @company = current_user.companies.new(company_params)
 
     respond_to do |format|
       if @company.save
